@@ -3,7 +3,6 @@ import asyncio
 
 uri = "ws://10.6.72.83:5050"
 
-
 class WebSocketClient():
 
     def __init__(self):
@@ -23,11 +22,11 @@ class WebSocketClient():
             return self.connection
 
 
-    async def sendMessage(self, message):
+    async def sendMessage(self, connection, message):
         '''
             Sending message to webSocket server
         '''
-        await self.connection.send(message)
+        await connection.send(message)
 
     async def receiveMessage(self, connection):
         '''
